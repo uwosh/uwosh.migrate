@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/@@standard_macros/page">
+<head>
+</head>
+
+<body>
+<div metal:fill-slot="body">
+
+  <h2>Migration Results</h2>
+
+  <h3>Log Messages</h3>
+  <ul>
+    <li tal:condition="not:view/log">No log messages.</li>
+    <li tal:repeat="log_entry view/log" tal:content="log_entry" />
+  </ul>
+ 
+  <h3>Errors</h3>
+  <ul>
+      <li tal:condition="not:view/errors">No errors.</li>
+      <li tal:repeat="error view/errors" tal:content="error" />
+  </ul>
+  
+</div>
+</body>
+</html>
